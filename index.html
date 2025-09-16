@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>支援が“届く”社会へ | 見えないところの子どもたちに</title>
+  <meta name="description" content="見えないところで助けを必要としている子に、支援が確実に届く仕組みをつくります。会いに行く・支援をまとめてつなぐ・だれでも来られる場所をひらく。まずは尼崎と葛飾で実装します。" />
+  <!-- 検索避け: 主要クローラにインデックスさせない指定 -->
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <meta name="googlebot" content="noindex, nofollow, noarchive" />
+  <meta property="og:title" content="支援が“届く”社会へ">
+  <meta property="og:description" content="見えないところの子に、支援が確実に届く仕組みを。">
+  <meta property="og:type" content="website">
+  <style>
+    :root{
+      --bg:#ffffff; --fg:#111; --muted:#6b7280;
+      --brand:#2563eb; --brand-weak:#e6efff;
+      --border:#e5e7eb; --radius:14px; --max:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{font:16px/1.75 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans JP",sans-serif;color:var(--fg);background:var(--bg)}
+    .wrap{max-width:var(--max);margin:auto;padding:0 20px}
+    .skip{position:absolute;left:-9999px}
+    .skip:focus{left:12px;top:12px;background:#000;color:#fff;padding:8px 12px;border-radius:8px}
+
+    .site-header{position:sticky;top:0;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--border);z-index:10}
+    .site-header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .logo{font-weight:700;text-decoration:none;color:inherit}
+    .menu{display:none;border:1px solid var(--border);background:transparent;padding:8px 12px;border-radius:10px}
+    .nav ul{display:flex;gap:16px;list-style:none;margin:0;padding:0}
+    .nav a{display:inline-block;padding:8px 10px;text-decoration:none;color:var(--fg)}
+    .btn{border:1px solid var(--border);padding:10px 16px;border-radius:10px}
+    .btn-primary{background:var(--brand);color:#fff;border-color:var(--brand)}
+    .link{color:var(--brand);text-decoration:none}
+
+    .hero{background:linear-gradient(180deg,var(--brand-weak),#fff);padding:72px 0}
+    .hero-title{font-size:clamp(28px,4vw,44px);line-height:1.2;margin:.2em 0}
+    .hero-lead{max-width:62ch;color:var(--muted)}
+    .hero-cta{display:flex;gap:12px;align-items:center;margin-top:14px}
+
+    main{display:block}
+    .section{padding:56px 0}
+    .section-alt{background:#fafafa}
+    .eyebrow{display:inline-block;font-size:.9rem;letter-spacing:.06em;color:var(--muted);margin-bottom:6px}
+
+    .kicker{font-weight:700;color:var(--brand)}
+
+    .grid-2{display:grid;grid-template-columns:1.1fr 1fr;gap:28px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+
+    .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:0 10px 20px rgba(0,0,0,.04)}
+    .card h3{margin-top:0}
+    .num{display:inline-block;min-width:2.1em;height:2.1em;line-height:2.1em;text-align:center;border-radius:999px;background:var(--brand-weak);color:#1f3e8a;font-weight:700;margin-right:8px}
+
+    .cta{background:linear-gradient(180deg,#fff,var(--brand-weak))}
+    .cta .panel{background:#fff;border:1px solid var(--border);border-radius:16px;padding:20px}
+
+    .site-footer{border-top:1px solid var(--border);padding:24px 0;color:var(--muted)}
+    .site-footer .wrap{display:flex;gap:16px;align-items:center;justify-content:space-between}
+
+    details{border:1px solid var(--border);border-radius:12px;padding:12px 16px;margin:10px 0;background:#fff}
+    summary{cursor:pointer;font-weight:600}
+
+    @media (max-width: 900px){
+      .grid-2{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      .menu{display:inline-block}
+      .nav{display:none;position:absolute;top:64px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--border)}
+      .nav.open{display:block}
+      .nav ul{flex-direction:column;padding:12px}
+    }
+
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0b0d10; --fg:#e5e7eb; --muted:#9ca3af; --brand-weak:#11203d; --border:#1f2937 }
+      .site-header{background:rgba(10,12,15,.6)}
+      .section-alt{background:#0e1116}
+      .card{background:#0e1116}
+      details{background:#0e1116}
+      .cta .panel{background:#0e1116}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">本文へスキップ</a>
+  <header class="site-header" role="banner">
+    <div class="wrap">
+      <a class="logo" href="#top" aria-label="トップへ">支援が“届く”社会へ</a>
+      <button class="menu" aria-controls="global-nav" aria-expanded="false">メニュー</button>
+      <nav id="global-nav" class="nav" aria-label="メイン">
+        <ul>
+          <li><a href="#about">はじめに</a></li>
+          <li><a href="#why">なぜ届かない？</a></li>
+          <li><a href="#actions">私たちがやること</a></li>
+          <li><a href="#areas">まずは二つの地域</a></li>
+          <li><a class="btn" href="#contact">参加・応援</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="top" class="hero" aria-label="導入">
+    <div class="wrap">
+      <p class="eyebrow">子どもと家庭への支援</p>
+      <h1 class="hero-title">見えないところの子に、支援が届く仕組みを</h1>
+      <p class="hero-lead">見えないところで、助けを必要としている子がいます。家の事情で夜まで起きていたり、学校に行けなくなったり。家族の世話を一人で背負って、心がすりへってしまう子もいます。支援は「ある」のに、そこまでたどり着けていない子がいるのです。</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#contact">応援・参加する</a>
+        <a class="link" href="#about">まずは読む</a>
+      </div>
+    </div>
+  </section>
+
+  <main id="main">
+    <section id="about" class="section">
+      <div class="wrap grid-2">
+        <div>
+          <h2>はじめに</h2>
+          <p>見えないところで、助けを必要としている子がいます。家の事情で夜まで起きていたり、学校に行けなくなったり。家族の世話を一人で背負って、心がすりへってしまう子もいます。支援は「ある」のに、そこまでたどり着けていない子がいるのです。</p>
+        </div>
+        <div class="card" aria-label="要点">
+          <strong class="kicker">要点</strong>
+          <ul>
+            <li>困りごとに気づかれにくい子がいる</li>
+            <li>制度はあるが、たどり着けない</li>
+            <li>私たちは“届く仕組み”をつくる</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="why" class="section section-alt" aria-label="なぜ届かないのか">
+      <div class="wrap grid-2">
+        <div>
+          <h2>どうして届かないの？</h2>
+          <p>今の仕組みは「家族が自分で申し込む」ことが前提です。けれど、しんどい時ほど手続きはできません。役所の人も手いっぱいで、家の外まで探しに行くことは難しいのが現実です。しかも、支援がばらばらで、情報がつながりにくい。だから、支援が届かなかったり、途中で切れてしまったりします。</p>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">現状の課題</h3>
+          <ul>
+            <li>申請前提の仕組み → つまずきやすい</li>
+            <li>人的リソースの不足 → 能動的な探索が難しい</li>
+            <li>支援が分断 → 情報連携が弱く“切れ目”が生じる</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="actions" class="section" aria-label="私たちがやること">
+      <div class="wrap">
+        <h2>私たちがやること（3つ）</h2>
+        <div class="grid-3">
+          <article class="card">
+            <h3><span class="num" aria-hidden="true">1</span>会いに行く人をつくる</h3>
+            <p>待つのではなく、こちらから会いに行きます。困っている家庭と信頼関係をつくり、申請や病院・相談につながるお手伝いを、その場で一緒にします。</p>
+          </article>
+          <article class="card">
+            <h3><span class="num" aria-hidden="true">2</span>支援をまとめてつなぐ</h3>
+            <p>国が用意した6つの家庭支援を、必要に合わせて“まとめて”利用できるようにします。窓口が違っても、同じチームで話し合い、情報を共有して、必要な支援に迷わず届くようにします。</p>
+          </article>
+          <article class="card">
+            <h3><span class="num" aria-hidden="true">3</span>だれでも来られる場所をひらく</h3>
+            <p>登録いらずの居場所を週4日。おとなのカフェや保護者会も。施設の中で食べ物や学用品を安く買えるようにして、「ついで」に来やすい動線をつくります。面倒な手続きも、その場で一緒にできます。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="areas" class="section section-alt" aria-label="実施地域">
+      <div class="wrap grid-2">
+        <div>
+          <h2>まずは二つの地域から</h2>
+          <p>尼崎と葛飾で、私たちはこのモデルを試します。地域のみなさんとも力を合わせ、方法を磨いて、広げていきます。</p>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">対象エリア</h3>
+          <ul>
+            <li>兵庫県尼崎市</li>
+            <li>東京都葛飾区</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section cta" aria-label="参加・応援">
+      <div class="wrap">
+        <div class="panel">
+          <h2>あなたにお願い</h2>
+          <p>「助けを求められない子」に、出会える仕組みをつくりたい。応援してくれる人、一緒に動いてくれる人を探しています。</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="mailto:system@learningforall.or.jp">メールで連絡する</a>
+            <a class="link" href="#top">活動の概要に戻る</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="wrap">
+      <small>&copy; <span id="y"></span> Your Organization</small>
+      <a class="link" href="#top" aria-label="ページ先頭へ戻る">▲ トップへ</a>
+    </div>
+  </footer>
+
+  <script>
+    // 年号を自動更新
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // モバイルナビ
+    const btn = document.querySelector('.menu');
+    const nav = document.getElementById('global-nav');
+    if (btn && nav){
+      btn.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(open));
+      });
+    }
+
+    // スムーススクロール
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href');
+        const el = id && document.querySelector(id);
+        if (el){
+          e.preventDefault();
+          el.scrollIntoView({behavior:'smooth', block:'start'});
+          history.replaceState(null,'',id);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
